@@ -72,6 +72,7 @@ export const NewCommentForm: React.FC<Props> = ({ postId, onSuccess }) => {
       onSuccess(newComment);
       setText('');
     } catch {
+    } finally {
       setLoading(false);
     }
   };
