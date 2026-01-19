@@ -10,10 +10,10 @@ type Props = {
 };
 
 export const PostDetails: React.FC<Props> = ({ post }) => {
-  const [loading, setLoading] = useState(false); //загрузка
-  const [errorMessage, setErrorMessage] = useState(false); //ошибка
-  const [comments, setComments] = useState<Comment[]>([]); //коммент []
-  const [visibleForm, setVisibleForm] = useState(false); //видим форму или она скрыта
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [visibleForm, setVisibleForm] = useState(false);
 
   useEffect(() => {
     if (!post) {

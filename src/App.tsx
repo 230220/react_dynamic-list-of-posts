@@ -34,11 +34,11 @@ export const App = () => {
     } finally {
       setLoadingUser(false);
     }
-  }; //загрузка юзеров
+  };
 
   useEffect(() => {
     loadUsers();
-  }, []); //рендер 1
+  }, []);
 
   const loadPosts = async (userId: number) => {
     setIsError(false);
@@ -62,8 +62,8 @@ export const App = () => {
       return;
     }
 
-    loadPosts(selectedUser.id); //Когда меняется selectedUser, если он существует — загружаем посты, иначе — ничего не делаем
-  }, [selectedUser]); //Загружать посты каждый раз, когда меняется selectedUser
+    loadPosts(selectedUser.id);
+  }, [selectedUser]);
 
   return (
     <main className="section">

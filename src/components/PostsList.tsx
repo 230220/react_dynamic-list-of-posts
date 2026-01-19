@@ -3,7 +3,7 @@ import { Post } from '../types/Post';
 import cn from 'classnames';
 
 type Props = {
-  posts: Post[] | null;
+  posts: Post[];
   selectedPost: Post | null;
   onSelectedPost: (post: Post | null) => void;
 };
@@ -13,14 +13,6 @@ export const PostsList: React.FC<Props> = ({
   selectedPost,
   onSelectedPost,
 }) => {
-  if (!posts) {
-    return (
-      <div data-cy="PostsList">
-        <p className="title">Posts:</p>
-      </div>
-    );
-  }
-
   const handleSelectPost = (
     event: React.MouseEvent<HTMLButtonElement>,
     post: Post,

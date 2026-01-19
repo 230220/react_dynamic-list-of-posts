@@ -18,7 +18,6 @@ export const NewCommentForm: React.FC<Props> = ({ postId, onSuccess }) => {
   const [textError, setTextError] = useState(false);
 
   const [loading, setLoading] = useState(false);
-  //const [error, setError] = useState(false);
 
   const handleNameChange = (value: string) => {
     setNameError(false);

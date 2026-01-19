@@ -14,18 +14,18 @@ export const UserSelector: React.FC<Props> = ({
   onSelectedUser,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const dropdownRef = useRef<HTMLDivElement>(null); //клик внутри или снаружи
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleButtonClick = () => {
     setIsOpen(prev => !prev);
-  }; //нажатие - открыли - закрыли список
+  };
 
   const handleOutside = useCallback(
     (event: MouseEvent) => {
       if (
         isOpen &&
-        dropdownRef.current && // DOM-элемент dropdown существует
-        !dropdownRef.current.contains(event.target as Node) // клик вне dropdown
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
       }
@@ -41,21 +41,6 @@ export const UserSelector: React.FC<Props> = ({
     };
   }, [handleOutside]);
   {
-    /*
-    const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      const userId = Number(event.target.value);
-
-      if (!userId) {
-        onSelectedUser(null);
-
-        return;
-      }
-
-      const user = users?.find(u => u.id === userId) || null;
-
-      onSelectedUser(user);
-    };
-  */
   }
 
   const handleUserClick = (
